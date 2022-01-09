@@ -5,17 +5,63 @@
   font-stretch: 25% 151%;
 }
 
-/* bas */
-
-:root {
-  --main-bg-color: #19535f;
-  --main-fg-color: #ffba3e;
-  --main-theme-color: #f8942f;
-  --main-tertiary-color: #d3e298;
+/* base */
+::selection {
+  background: transparent;
 }
+
+:root body,
+:root body.v1 {
+  --main-bg-color: #19535f;
+  --main-fg-color: #f8942f;
+  --main-bg-color: color(display-p3 0.097 0.307 0.365);
+  --main-fg-color: color(display-p3 0.985 0.642 0.296);
+}
+
+:root body.v2 {
+  --main-bg-color: #2c3545;
+  --main-fg-color: #dc5a41;
+  --main-bg-color: color(display-p3 0.01 0.083 0.24);
+  --main-fg-color: color(display-p3 0.965 0.465 0.352);
+}
+:root body.v3 {
+  --main-bg-color: #b91343;
+  --main-fg-color: #a8806b;
+  --main-bg-color: color(display-p3 0.675 0.054 0.189);
+  --main-fg-color: color(display-p3 0.98 0.769 0.637);
+}
+
+:root body.v4 {
+  --main-bg-color: #457963;
+  --main-fg-color: #c28f9e;
+  --main-bg-color: color(display-p3 0.159 0.46 0.305);
+  --main-fg-color: color(display-p3 0.98 0.725 0.806);
+}
+
+:root body.v5 {
+  --main-bg-color: #ee7267;
+  --main-fg-color: #fbd8df;
+  --main-bg-color: color(display-p3 0.935 0.417 0.351);
+  --main-fg-color: color(display-p3 0.99 0.842 0.873);
+}
+
+:root body.v6 {
+  --main-bg-color: #ee7267;
+  --main-fg-color: #fbd8df;
+  --main-bg-color: color(display-p3 0.935 0.417 0.351);
+  --main-fg-color: color(display-p3 0.99 0.842 0.873);
+}
+
+:root body.v7 {
+  --main-bg-color: #562151;
+  --main-fg-color: #d7713b;
+  --main-bg-color: color(display-p3 0.32 0.008 0.313);
+  --main-fg-color: color(display-p3 0.795 0.301 0.024);
+}
+
 svg,
 .icon {
-  fill: var(--main-theme-color);
+  fill: var(--main-fg-color);
 }
 
 html,
@@ -29,13 +75,16 @@ body,
   left: 0;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: crosshair;
 }
 
 .grid {
@@ -50,7 +99,7 @@ body,
 }
 
 header {
-  color: var(--main-tertiary-color);
+  color: var(--main-fg-color);
   width: 100%;
   position: absolute;
   display: flex;
@@ -90,14 +139,14 @@ footer {
 }
 
 footer div {
-  padding: 4rem;
-  text-align: right;
+  padding: 4rem 0;
+  text-align: center;
 }
 
 header a,
 footer a {
   width: 100%;
-  margin: 0 0.5rem;
+  margin: 0 0.25rem;
   text-decoration: none;
   color: var(--main-fg-color);
 }
@@ -118,11 +167,8 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  color: var(--main-tertiary-color);
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin: 0.5rem 0;
+h1 span {
+  font-style: italic;
 }
 
 @keyframes fade {
@@ -152,10 +198,20 @@ h2 {
 
   h1 {
     font-size: 20vw;
+    line-height: 0.8;
   }
 
   footer {
     justify-content: flex-end;
+  }
+
+  footer div {
+    padding: 4rem;
+    text-align: right;
+  }
+
+  footer a {
+    margin: 0 0.5rem;
   }
 }
 
