@@ -1,2 +1,2 @@
-# design-product-2
+# DannyRuchtie
 Created with CodeSandbox
